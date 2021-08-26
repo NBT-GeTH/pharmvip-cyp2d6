@@ -1,6 +1,6 @@
 # pharmvip-CYP2D6
 
-Prepare input CYP2D6 file to PharmVIP-guideline.
+Prepare CYP2D6 result file to PharmVIP-guideline.
 
 ## Setup
 
@@ -10,7 +10,7 @@ Prepare input CYP2D6 file to PharmVIP-guideline.
 
 ## Usage 
 
-VCF and BAM file will be run Astrolabe software to get outputAstrolabe. (outputAstrolabe.out.txt)
+The input VCF and BAM files will be run Astrolabe software to get outputAstrolabe. (outputAstrolabe.out.txt)
 ```shell
 python diplotype_astrolabe.py outputAstrolabe.out.txt CYP2D6_with_guideline.txt
 ```
