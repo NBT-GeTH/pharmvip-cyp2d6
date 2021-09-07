@@ -11,6 +11,23 @@ Prepare CYP2D6 result file to PharmVIP-guideline.
 ## Usage 
 
 The VCF and BAM files will be used as inputs for running Astrolabe software to get CYP2D6 allele prediction result. (outputAstrolabe.out.txt)
+1. Run astrolabe software 
+input : VCF and BAM files
+output: outputAstrolabe.out.txt outputAstrolabe.debug.txt outputAstrolabe.novel.txt
+```shell
+run-astrolabe.sh \
+            -conf \$EBROOTASTROLABE/astrolabe.ini \
+            -inputVCF ${vcfGzFile} \
+            -inputBam ${bamFile} \
+            -outFile ${outputAstrolabe}.out.txt \
+            -debugFile ${outputAstrolabe}.debug.txt \
+            -novelFile ${outputAstrolabe}.novel.txt \
+            -ref ${HumanGenomeVersion} \
+            -targets CYP2D6
+ ```
+2. Extract diplotype from outFile 
+input : outputAstrolabe.out.txt CYP2D6_with_guideline.txt
+output: diplotype_CYP2D6.tsv
 ```shell
 python diplotype_astrolabe.py outputAstrolabe.out.txt CYP2D6_with_guideline.txt
 ```
